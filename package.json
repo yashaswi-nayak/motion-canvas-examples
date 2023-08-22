@@ -7,6 +7,7 @@
     "smooth-parallax": "npm run serve -w examples/smooth-parallax",
     "deferred-lighting": "npm run serve -w examples/deferred-lighting",
     "motion-canvas": "npm run serve -w examples/motion-canvas",
+    "basic-shapes": "npm run serve -w examples/basic-shapes",
     "logo": "npm run serve -w examples/logo",
     "lint": "eslint \"examples/**/src/**/*.ts?(x)\"",
     "lint:fix": "eslint --fix \"examples/**/src/**/*.ts?(x)\"",
