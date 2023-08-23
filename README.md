@@ -16,6 +16,14 @@ A set of videos made using [Motion Canvas](https://motioncanvas.io).
 
 ## Available examples
 
+### Basic Shapes
+
+```shell
+npm run basic-shapes
+```
+
+<video alt="basic shapes video" src='./examples/basic-shapes/output/video.mp4' width=480></video>
+
 ### Smooth Parallax
 
 ```shell

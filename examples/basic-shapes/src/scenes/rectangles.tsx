@@ -1,5 +1,5 @@
 import { makeScene2D} from '@motion-canvas/2d';
-import { Circle, Rect, Txt } from '@motion-canvas/2d/lib/components';
+import { Rect, Txt } from '@motion-canvas/2d/lib/components';
 import { Direction, slideTransition, waitFor} from '@motion-canvas/core';
 import { createRef, makeRef } from '@motion-canvas/core/lib/utils';
 import { range } from '@motion-canvas/core/lib/utils';
@@ -9,11 +9,11 @@ export default makeScene2D(function* (view) {
   // Screen size = 1920 x 1080 
   // Max width - 960 + 960
   // Max height - 540 + 540
-  view.fill('#212936');
+  view.fill('#b56576');
   const total_width = 1920
   const total_height = 1080
-  const dot = createRef<Circle>();
-  const concentric:Circle[] = [];
+  const dot = createRef<Rect>();
+  const concentric:Rect[] = [];
 
   view.add(<Rect
     width={total_width-20}
@@ -28,41 +28,46 @@ export default makeScene2D(function* (view) {
     stroke={"white"}></Rect>)
   
   
-  view.add(<Circle
+  view.add(<Rect
     ref={dot}
-    size={25}
+    height={25}
+    width={50}
     fill={"#ffffff"}
     y={-300}
-    ></Circle>)
+    ></Rect>)
   
-  view.add(<Circle
-    size={150}
+  view.add(<Rect
+    width={250}
+    height={150}
     stroke={"#ffffff"}
     lineWidth={1}
     x={-500}
-    ></Circle>)
+    ></Rect>)
   
-  view.add(<Circle
-    size={150}
+  view.add(<Rect
+    width={150}
+    height={250}
     fill={"#ffffff"}
     x={-170}
-    ></Circle>)
+    ></Rect>)
 
-  view.add(<Circle
-    size={150}
+  view.add(<Rect
+    width={250}
+    height={150}
     fill={"#ffffff44"}
     stroke={"ffffff"}
     lineWidth={2}
     x={170}
-    ></Circle>)
+    ></Rect>)
 
-  view.add(range(6).map(i => (<Circle
+  view.add(range(6).map(i => (<Rect
     ref={makeRef(concentric,i)}
-    size={150-(i*25)}
+    width={150-(i*25)}
+    height={250-(i*25)}
     stroke={"ffffff"}
     lineWidth={1}
     x={500}
-  ></Circle>)))
+  ></Rect>)))
 
   view.add(<>
   <Txt
@@ -75,39 +80,32 @@ export default makeScene2D(function* (view) {
     x={-500}
     y={100}
     fontSize={26}
-    text="Circle"
+    text="Rectangle"
     fill={"white"}
     ></Txt>
   <Txt
     x={-170}
-    y={100}
+    y={150}
     fontSize={26}
-    text="Filled Circle"
+    text="Filled Rectangle"
     fill={"white"}
     ></Txt>
   <Txt
     x={170}
     y={100}
     fontSize={26}
-    text="Stroked Circle"
-    fill={"white"}
-    ></Txt>
-  <Txt
-    x={-500}
-    y={100}
-    fontSize={26}
-    text="Circle"
+    text="Stroked Rectangle"
     fill={"white"}
     ></Txt>
   <Txt
     x={500}
-    y={100}
+    y={150}
     fontSize={26}
-    text="Concentric Circle"
+    text="Concentric Rectangle"
     fill={"white"}
     ></Txt>
   </>)
 
-  
-  yield* waitFor(2);
+yield* slideTransition(Direction.Top,1);
+  yield* waitFor(1);
 });
