@@ -22,7 +22,7 @@ A set of videos made using [Motion Canvas](https://motioncanvas.io).
 npm run basic-shapes
 ```
 
-<video alt="basic shapes video" src='./examples/basic-shapes/output/video.mp4' width=480></video>
+<img alt="basic shapes gif" src='./examples/basic-shapes/output/video.gif' width=480></img>
 
 ### Smooth Parallax
 
