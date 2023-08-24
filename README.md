@@ -24,6 +24,14 @@ npm run basic-shapes
 
 <img alt="basic shapes gif" src='./examples/basic-shapes/output/video.gif' width=480></img>
 
+### Basic Animation
+
+```shell
+npm run basic-animation
+```
+
+<img alt="basic animation gif" src='./examples/basic-animation/output/video.gif' width=480></img>
+
 ### Smooth Parallax
 
 ```shell
